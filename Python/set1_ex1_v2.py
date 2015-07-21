@@ -1,8 +1,6 @@
-import base64
-
 def hex_to_b64 (hex_input):
 	hex_input = hex_input.decode("hex")
-	b64_output = base64.encodestring(hex_input)
+	b64_output = hex_input.encode("base64")
 
 	return b64_output
 
