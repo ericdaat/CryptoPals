@@ -5,7 +5,7 @@ def xor_strings(xs, ys):
 
 def decode_xor(hex_string):
 
-	decoded_string = hex_string.decode("hex")
+	decoded_string = hex_string.strip().decode("hex")
 	frequency_analysis = Counter(decoded_string).most_common()
 	#keep these two arrays sorted with highest score and corresponding character first
 	array_score = []
