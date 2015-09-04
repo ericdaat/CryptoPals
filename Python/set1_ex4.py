@@ -1,2 +1,2 @@
-from set1_ex3 import *
+from xor_functions import *
 

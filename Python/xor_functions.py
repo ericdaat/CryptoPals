@@ -1,5 +1,7 @@
 from collections import Counter
-from xor_functions import xor_strings
+
+def xor_strings(xs, ys):
+    return "".join(chr(ord(x) ^ ord(y)) for x, y in zip(xs, ys))
 
 def decode_xor(hex_string):
 
@@ -32,6 +34,3 @@ def decode_xor(hex_string):
 		decoded_message += xor_strings(decoded_string[i],array_key[-1])
 
 	return decoded_message
-
-hex_string = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
-print decode_xor(hex_string)
