@@ -1,4 +1,6 @@
 from xor_functions import *
+
+
 import urllib2
 
 messages_array = []
@@ -17,7 +19,3 @@ for line in urllib2.urlopen("http://cryptopals.com/static/challenge-data/4.txt")
 for i, item in enumerate(scores_array):
 	if scores_array[i] == max(scores_array):
 		print messages_array[i]
-
-
-
-
