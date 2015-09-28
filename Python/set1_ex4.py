@@ -1,6 +1,4 @@
 from xor_functions import *
-
-
 import urllib2
 
 messages_array = []
