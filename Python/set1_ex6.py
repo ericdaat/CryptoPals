@@ -1,4 +1,5 @@
 import urllib2
+from xor_functions import *
 
 def string_to_binary(string):
 	return ' '.join('{0:08b}'.format(ord(x), 'b') for x in string)
@@ -37,4 +38,11 @@ normalized_hamming_distance_array, keysize_array = zip(*sorted(zip(normalized_ha
 
 best_key = keysize_array[0]
 
-print map(''.join, zip(*[iter(text_string)]*best_key))
+a = map(''.join, zip(*[iter(text_string)]*best_key))
+transposed_a = []
+
+for j in range(best_key):
+	transposed_a.append('')
+	for i in range(len(a)):
+		char = a[i][j]
+		transposed_a[j]+=char

@@ -4,7 +4,6 @@ def xor_strings(xs, ys):
     return "".join(chr(ord(x) ^ ord(y)) for x, y in zip(xs, ys))
 
 def decode_xor(hex_string):
-
 	decoded_string = hex_string.strip().decode("hex")
 	frequency_analysis = Counter(decoded_string).most_common()
 	#keep these two arrays sorted with highest score and corresponding character first
@@ -34,3 +33,14 @@ def decode_xor(hex_string):
 		decoded_message += xor_strings(decoded_string[i],array_key[-1])
 
 	return decoded_message
+
+def singleCharLineDecode(line):
+	decoded_message = decode_xor(line)
+	score = 0
+
+	for i in range(0,len(decoded_message)):
+		char = decoded_message[i]
+		if (char.isalpha() | char.isspace()):
+			score += 1
+
+	return (decoded_message,score)
